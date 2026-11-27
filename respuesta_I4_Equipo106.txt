@@ -1,20 +1,30 @@
 Integrantes:
 ALFA:
 BETA: Ramirez Ciro Jesus Nicolas
-GAMMA:
+GAMMA:Sabetay Agustin
 
 
 A- ¿Qué color de fondo tiene su página en el TESTING ?
 B- ¿Qué color de fondo tiene su página en el DESARROLLO ?
+
 C- ¿Qué color de fondo tiene su página en el MASTER?
+	En MASTER (main) quedó el color de fondo BLUE (blue) luego de unificar DESARROLLO (YELLOW) y TESTING (BLUE) en los puntos 15 y 	16.
+
 D- ¿Qué favicon quedó en el MASTER el de ALFA o el de BETA?
 
 
 
 E- ¿Algún integrante tuvo problemas al hacer el push?
+
 F- ¿Qué problemas surgieron?
+	1. Rechazo del push (rejected - fetch first / non-fast-forward) al intentar hacer push cuando el remoto ya tenía commits nuevos 	de otro integrante.
+	2. Conflicto de fusión (Merge conflict en index.html) al actualizar/integrar los cambios remotos porque todos modificamos las 	mismas líneas dentro de <body>.
+
 G- ¿Qué soluciones pueden aplicar y cual seria la consecuencia de cada solución
 adoptada?
+
 H- ¿Qué sucede si cada uno utiliza el push -f?
+	Cada integrante sobrescribe el historial remoto de TESTING con su versión local y borra los commits anteriores de los 		compañeros. Al terminar el orden ALFA, BETA y GAMMA, en el remoto queda solo el último push -f (el de GAMMA), perdiéndose los 		párrafos <p> de los demás.
+
 I- ¿Qué debo hacer para que el index.html tengas todos los <p> de los puntos 18,19 y 20
 en DESARROLLO ?
