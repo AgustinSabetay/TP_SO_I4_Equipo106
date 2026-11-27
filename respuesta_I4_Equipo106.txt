@@ -6,8 +6,15 @@ GAMMA:
 
 A- ¿Qué color de fondo tiene su página en el TESTING ?
 el color de fondo en TESTING es BLUE
+
 B- ¿Qué color de fondo tiene su página en el DESARROLLO ?
+
+B- El color de fondo de la página en la rama DESARROLLO es YELLOW (amarillo), debido al cambio realizado 
+por ALFA en el punto 13.
+
+
 C- ¿Qué color de fondo tiene su página en el MASTER?
+
 D- ¿Qué favicon quedó en el MASTER el de ALFA o el de BETA?
  En master quedó el favicon de ALFA. Al revisar el historial del archivo
    (git log -- favicon.ico), el único commit que lo modificó es el de ALFA
@@ -23,9 +30,27 @@ E- ¿Algún integrante tuvo problemas al hacer el push?
    que GAMMA no tenía en su copia local. Para poder subir, GAMMA tuvo que hacer
    git pull origin TESTING, resolver el conflicto en index.html (los tres
    agregaron un <p> en el mismo lugar) y recién ahí hacer el push.
+
+
 F- ¿Qué problemas surgieron?
 G- ¿Qué soluciones pueden aplicar y cual seria la consecuencia de cada solución
+
+G- Las soluciones posibles son:
+-Utilizar "git pull" para descargar e integrar los cambios remotos mediante un merge. Esto permite conservar los cambios de ambos integrantes, 
+aunque puede generar conflictos que deben resolverse manualmente.
+- Utilizar "git pull --rebase" para colocar los commits locales después de los cambios remotos. Permite mantener un historial más lineal, 
+pero también pueden aparecer conflictos que deben resolverse.
+- Resolver los conflictos manualmente, conservando los cambios de todos los integrantes, y luego realizar el commit correspondiente y volver a intentar el push.
+
+En nuestro caso, utilizamos "git pull --no-rebase origin TESTING" para integrar los cambios de ALFA con los de BETA. 
+Git abrió Visual Studio Code para confirmar el mensaje del merge. Después de finalizar la integración, el directorio de trabajo quedó limpio y 
+pudimos realizar el push correctamente.
+
+
 adoptada?
 H- ¿Qué sucede si cada uno utiliza el push -f?
 I- ¿Qué debo hacer para que el index.html tengas todos los <p> de los puntos 18,19 y 20
 en DESARROLLO ?
+I- Una vez que los tres integrantes hayan subido sus cambios a la rama TESTING, debo cambiar a la rama DESARROLLO, actualizarla y realizar un merge de TESTING 
+hacia DESARROLLO. Si aparecen conflictos, debo resolverlos conservando los tres párrafos agregados por ALFA, BETA y GAMMA. 
+Finalmente, debo realizar el commit correspondiente y subir los cambios a GitHub mediante un push.
